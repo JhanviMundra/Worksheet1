@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xmlns:context="http://www.springframework.org/schema/context"
+	    xmlns:p="http://www.springframework.org/schema/p"
+	    xmlns:c="http://www.springframework.org/schema/c"
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context.xsd">
+	    
+	    <bean class="com.worksheet1.Address" name="address" p:Street="Lok Marg" p:city="Delhi" p:country="India"/>
+	    
+	    <bean class="com.worksheet1.Employee" name="employee1">
+	        <property name="studentName" value="Jhanvi"/>
+	        <property name="studentAge" value="21"/>
+	        <property name="ob" ref="address"/>
+	        <property name="numbers">
+	          <list>
+	            <value>764320983</value>
+	            <value>987654321</value>
+	          </list>
+	        </property>    
+	    </bean>
+	    
+	    <bean class="com.worksheet1.Employee" name="employee2" p:studentName="Akshay" p:studentAge="24" p:ob-ref="address" p:numbers="7655343776,987542175" />
+	          
+	     <bean class="com.worksheet1.Employee" name="employee3">
+	        <constructor-arg name="studentName" value="Abhinav" type="String"/>
+	        <constructor-arg name="studentAge" value="22" type="int"/>
+	        <constructor-arg name="ob" ref="address"/>
+	        <constructor-arg name="numbers">
+	          <list>
+	            <value>320983</value>
+	            <value>654321</value>
+	          </list>
+	        </constructor-arg>    
+	    </bean>
+	    
+	     <bean class="com.worksheet1.Employee" name="employee4" c:studentName="Akshit" c:studentAge="23" c:ob-ref="address" c:numbers="75343776 , 9872175"/> 
+	                    
+</beans>	                  
+	                  
+	                  
+	                  
+	                  
+	    
+	    
